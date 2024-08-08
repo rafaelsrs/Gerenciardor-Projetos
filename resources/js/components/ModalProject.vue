@@ -55,9 +55,9 @@
                                     <label class="form-check-label" for="flexCheckDefault"> Finalizada </label>
                                 </div>
 
-                                <div>
+                                <div class="mt-4 py-2">
                                     <a @click="removerAtividade(idxAtividade)">
-                                        <i class="bi bi-trash"></i>
+                                        <i class="bi bi-trash cursor-pointer"></i>
                                     </a>
                                 </div>
                             </div>
@@ -162,5 +162,9 @@ export default {
 .modal {
     display: block; /* Override Bootstrap's default display: none; */
     background-color: rgba(0, 0, 0, 0.5); /* Add a background overlay */
+}
+
+.cursor-pointer {
+    cursor: pointer;
 }
 </style>

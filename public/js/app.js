@@ -21666,9 +21666,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/lib/axios.js");
 var modeloAtividade = {
-  nome_atividade: '',
-  dt_ini_atividade: '',
-  dt_fim_atividade: '',
+  nm_atividade: '',
+  data_ini: '',
+  data_fim: '',
   is_finalizada: false
 };
 
@@ -21990,14 +21990,17 @@ var _hoisted_31 = /*#__PURE__*/_withScopeId(function () {
     "for": "flexCheckDefault"
   }, " Finalizada ", -1 /* HOISTED */);
 });
-var _hoisted_32 = ["onClick"];
-var _hoisted_33 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_32 = {
+  "class": "mt-4 py-2"
+};
+var _hoisted_33 = ["onClick"];
+var _hoisted_34 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-    "class": "bi bi-trash"
+    "class": "bi bi-trash cursor-pointer"
   }, null, -1 /* HOISTED */);
 });
-var _hoisted_34 = [_hoisted_33];
-var _hoisted_35 = {
+var _hoisted_35 = [_hoisted_34];
+var _hoisted_36 = {
   "class": "modal-footer",
   style: {
     "background-color": "black"
@@ -22064,12 +22067,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         return atividade.is_finalizada = $event;
       },
       id: "flexCheckDefault"
-    }, null, 8 /* PROPS */, _hoisted_30), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, atividade.is_finalizada]]), _hoisted_31]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    }, null, 8 /* PROPS */, _hoisted_30), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, atividade.is_finalizada]]), _hoisted_31]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_32, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
       onClick: function onClick($event) {
         return $options.removerAtividade(idxAtividade);
       }
-    }, [].concat(_hoisted_34), 8 /* PROPS */, _hoisted_32)])]);
-  }), 256 /* UNKEYED_FRAGMENT */))])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_35, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    }, [].concat(_hoisted_35), 8 /* PROPS */, _hoisted_33)])]);
+  }), 256 /* UNKEYED_FRAGMENT */))])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_36, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     type: "button",
     "class": "btn btn-secondary",
     onClick: _cache[5] || (_cache[5] = function ($event) {
@@ -22215,14 +22218,17 @@ var _hoisted_31 = /*#__PURE__*/_withScopeId(function () {
     "for": "flexCheckDefault"
   }, " Finalizada ", -1 /* HOISTED */);
 });
-var _hoisted_32 = ["onClick"];
-var _hoisted_33 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_32 = {
+  "class": "mt-4 py-2"
+};
+var _hoisted_33 = ["onClick"];
+var _hoisted_34 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-    "class": "bi bi-trash"
+    "class": "bi bi-trash cursor-pointer"
   }, null, -1 /* HOISTED */);
 });
-var _hoisted_34 = [_hoisted_33];
-var _hoisted_35 = {
+var _hoisted_35 = [_hoisted_34];
+var _hoisted_36 = {
   "class": "modal-footer",
   style: {
     "background-color": "black"
@@ -22289,12 +22295,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         return atividade.is_finalizada = $event;
       },
       id: "flexCheckDefault"
-    }, null, 8 /* PROPS */, _hoisted_30), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, atividade.is_finalizada]]), _hoisted_31]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    }, null, 8 /* PROPS */, _hoisted_30), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, atividade.is_finalizada]]), _hoisted_31]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_32, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
       onClick: function onClick($event) {
         return $options.removerAtividade(idxAtividade);
       }
-    }, [].concat(_hoisted_34), 8 /* PROPS */, _hoisted_32)])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]);
-  }), 256 /* UNKEYED_FRAGMENT */))])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_35, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    }, [].concat(_hoisted_35), 8 /* PROPS */, _hoisted_33)])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]);
+  }), 256 /* UNKEYED_FRAGMENT */))])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_36, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     type: "button",
     "class": "btn btn-secondary",
     onClick: _cache[5] || (_cache[5] = function ($event) {
@@ -28943,7 +28949,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.modal[data-v-70a8b997] {\n    display: block; /* Override Bootstrap's default display: none; */\n    background-color: rgba(0, 0, 0, 0.5); /* Add a background overlay */\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.modal[data-v-70a8b997] {\n    display: block; /* Override Bootstrap's default display: none; */\n    background-color: rgba(0, 0, 0, 0.5); /* Add a background overlay */\n}\n.cursor-pointer[data-v-70a8b997] {\n    cursor: pointer;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -28967,7 +28973,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.modal[data-v-c522417e] {\n    display: block; /* Override Bootstrap's default display: none; */\n    background-color: rgba(0, 0, 0, 0.5); /* Add a background overlay */\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.modal[data-v-c522417e] {\n    display: block; /* Override Bootstrap's default display: none; */\n    background-color: rgba(0, 0, 0, 0.5); /* Add a background overlay */\n}\n.cursor-pointer[data-v-c522417e] {\n    cursor: pointer;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

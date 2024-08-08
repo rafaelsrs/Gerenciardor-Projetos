@@ -6,8 +6,10 @@
 <body>
     <div id="app">
         <div class="container">
-            <h1>Index projeto</h1>
-            <button @click="showModalProjeto">Adicionar projeto</button>
+            <div class="d-flex justify-content-between align-items-center my-4">
+                <h1>Gerenciador de Projetos</h1>
+                <button type="button" class="btn btn-primary" @click="showModalProjeto">Adicionar projeto</button>
+            </div>
 
             @foreach ($projetos as $projeto)
                 <table class="table mb-5">
@@ -31,8 +33,8 @@
                             <td>{{ $projeto->data_fim_formatada }}</td>
                             <td>{{ $projeto->percentual_andamento }}%</td>
                             <td>{{ $projeto->atrasado == true ? 'Sim' : 'Não'}}</td>
-                            <td class="px-0"><a @click.prevent="showModalProjetoEditar({{ json_encode($projeto) }})"><i class="bi bi-pencil"></i></a></td>
-                            <td class="px-0"><a @click.prevent="openModalExcluirProjeto({{ json_encode($projeto->cd_projeto) }})"><i class="bi bi-trash"></i></a></td>
+                            <td class="px-0"><a @click.prevent="showModalProjetoEditar({{ json_encode($projeto) }})"><i class="bi bi-pencil cursor-pointer"></i></a></td>
+                            <td class="px-0"><a @click.prevent="openModalExcluirProjeto({{ json_encode($projeto->cd_projeto) }})"><i class="bi bi-trash cursor-pointer"></i></a></td>
                         </tr>
                         @if ($projeto->atividades)
                             <thead>
@@ -54,7 +56,7 @@
                                     <td>{{ $atividade->data_ini_formatada }}</td>
                                     <td>{{ $atividade->data_fim_formatada }}</td>
                                     <td>{{ $atividade->is_finalizada == true ? 'Sim' : 'Não'}}</td>
-                                    <td class="px-0"><a @click.prevent="openModalExcluirAtividade({{ json_encode($atividade->cd_atividade) }})"><i class="bi bi-trash"></i></td>
+                                    <td class="px-0"><a @click.prevent="openModalExcluirAtividade({{ json_encode($atividade->cd_atividade) }})"><i class="bi bi-trash cursor-pointer"></i></td>
                                 </tr>
                             @endforeach
                         @endif
@@ -71,3 +73,9 @@
     <script src="{{ mix('js/app.js') }}"></script>
 </body>
 </html>
+
+<style>
+    .cursor-pointer {
+        cursor: pointer;
+    }
+</style>
