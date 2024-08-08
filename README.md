@@ -37,5 +37,5 @@ Siga os passos abaixo para configurar o ambiente de desenvolvimento:
 ## Uso
 
     Para iniciar o servidor de desenvolvimento, execute o comando abaixo:
-    ```sh
-    php artisan serve
+```sh
+php artisan serve
