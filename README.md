@@ -1,6 +1,6 @@
 # Gerenciardor-Projetos
 
-Breve descrição do projeto e seu propósito.
+Projeto realizado para seleção da vaga de emprego para a empresa artia conforme ideia proposta
 
 ## Pré-requisitos
 
@@ -23,15 +23,19 @@ Siga os passos abaixo para configurar o ambiente de desenvolvimento:
     composer install
 
 3.  Crie um arquivo .env na raiz do projeto e configure suas variáveis de ambiente. Você pode usar o arquivo .env.example como base:
+    ```sh
     cp .env.example .env
 
 4.  Gere a chave da aplicação:
+    ```sh
     php artisan key:generate
 
 5.  Configure o banco de dados no arquivo .env:
+    ```sh
     php artisan migrate
 
 ## Uso
 
-Para iniciar o servidor de desenvolvimento, execute o comando abaixo:
-php artisan serve
+    Para iniciar o servidor de desenvolvimento, execute o comando abaixo:
+    ```sh
+    php artisan serve
