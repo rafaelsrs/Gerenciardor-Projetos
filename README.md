@@ -18,6 +18,7 @@ Siga os passos abaixo para configurar o ambiente de desenvolvimento:
     ```sh
     git clone https://github.com/seu-usuario/seu-repositorio.git
     cd seu-repositorio
+    ```
 
 2.  Instale as dependências do projeto usando o Composer:
     composer install
@@ -25,24 +26,29 @@ Siga os passos abaixo para configurar o ambiente de desenvolvimento:
 3.  Crie um arquivo .env na raiz do projeto e configure suas variáveis de ambiente. Você pode usar o arquivo .env.example como base:
     ```sh
     cp .env.example .env
+    ```
 
 4.  Gere a chave da aplicação:
     ```sh
     php artisan key:generate
+    ```
 
 5.  Configure o banco de dados no arquivo .env:
     ```sh
     php artisan migrate
+    ```
 
 ## Uso
 
 1.  Compile o front-end utilizando:
     ```sh
     npm run dev
+    ```
 
 2.   Para iniciar o servidor de desenvolvimento, execute o comando abaixo:
     ```sh
     php artisan serve
+    ```
 
 ## Api
 
