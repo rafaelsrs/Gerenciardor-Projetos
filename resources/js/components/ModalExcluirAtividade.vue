@@ -2,16 +2,16 @@
     <div v-if="show" class="modal" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header" style="background-color: lightgray">
                     <h5 class="modal-title">Excluir Atividade</h5>
                     <button type="button" class="btn-close" @click="$emit('close')" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <p>Deseja excluir a atividade?</p>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" @click="$emit('close')">Close</button>
-                    <button type="button" class="btn btn-primary" @click="excluirAtividade()">Save changes</button>
+                <div class="modal-footer" style="background-color: black">
+                    <button type="button" class="btn btn-secondary" @click="$emit('close')">Fechar</button>
+                    <button type="button" class="btn btn-primary" @click="excluirAtividade()">Salvar</button>
                 </div>
             </div>
         </div>

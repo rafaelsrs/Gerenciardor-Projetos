@@ -1,0 +1,4 @@
+TODO Alterar banco para chave primaria composta na tabela de atividades
+TODO Melhorar resposta da api através de resource personalizado
+TODO Implementar DTO para enviar os parâmetros para os services
+TODO Implementar visualização de resposta ao realizar as ações no sistema

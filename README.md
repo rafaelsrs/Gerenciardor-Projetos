@@ -6,7 +6,7 @@ Projeto realizado para seleção da vaga de emprego para a empresa artia conform
 
 Antes de começar, certifique-se de ter os seguintes softwares instalados:
 
-- [PHP](https://www.php.net/downloads) >= 7.4
+- [PHP](https://www.php.net/downloads) >= 8.1
 - [Composer](https://getcomposer.org/)
 - [MySQL](https://www.mysql.com/downloads/) ou outro banco de dados compatível
 
@@ -36,6 +36,14 @@ Siga os passos abaixo para configurar o ambiente de desenvolvimento:
 
 ## Uso
 
-    Para iniciar o servidor de desenvolvimento, execute o comando abaixo:
-```sh
-php artisan serve
+1.  Compile o front-end utilizando:
+    ```sh
+    npm run dev
+
+2.   Para iniciar o servidor de desenvolvimento, execute o comando abaixo:
+    ```sh
+    php artisan serve
+
+## Api
+
+    Não é necessário nenhuma autorização para o uso da api

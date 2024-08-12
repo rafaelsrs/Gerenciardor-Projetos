@@ -11,9 +11,9 @@
                 <button type="button" class="btn btn-primary" @click="showModalProjeto">Adicionar projeto</button>
             </div>
 
-            @foreach ($projetos as $projeto)
+            @foreach ($listagem as $projeto)
                 <table class="table mb-5">
-                    <thead>
+                    <thead class="table-dark">
                         <tr>
                             <th scope="col">ID Projeto</th>
                             <th scope="col">Nome Projeto</th>
@@ -27,17 +27,17 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <th scope="row">{{ $projeto->cd_projeto }}</th>
-                            <td>{{ $projeto->nm_projeto }}</td>
-                            <td>{{ $projeto->data_ini_formatada }}</td>
-                            <td>{{ $projeto->data_fim_formatada }}</td>
-                            <td>{{ $projeto->percentual_andamento }}%</td>
-                            <td>{{ $projeto->atrasado == true ? 'Sim' : 'Não'}}</td>
+                            <th scope="row">{{ $projeto['cd_projeto'] }}</th>
+                            <td>{{ $projeto['nm_projeto'] }}</td>
+                            <td>{{ $projeto['data_ini_formatada'] }}</td>
+                            <td>{{ $projeto['data_fim_formatada'] }}</td>
+                            <td>{{ $projeto['percentual_andamento'] }}%</td>
+                            <td>{{ $projeto['atrasado'] == true ? 'Sim' : 'Não'}}</td>
                             <td class="px-0"><a @click.prevent="showModalProjetoEditar({{ json_encode($projeto) }})"><i class="bi bi-pencil cursor-pointer"></i></a></td>
-                            <td class="px-0"><a @click.prevent="openModalExcluirProjeto({{ json_encode($projeto->cd_projeto) }})"><i class="bi bi-trash cursor-pointer"></i></a></td>
+                            <td class="px-0"><a @click.prevent="openModalExcluirProjeto({{ json_encode($projeto['cd_projeto']) }})" class="link-danger"><i class="bi bi-trash cursor-pointer"></i></a></td>
                         </tr>
-                        @if ($projeto->atividades)
-                            <thead>
+                        @if ($projeto['atividades'])
+                            <thead class="table-light">
                                 <tr>
                                     <th></th>
                                     <th scope="col">ID Atividade</th>
@@ -48,18 +48,19 @@
                                     <th scope="col"></th>
                                 </tr>
                             </thead>
-                            @foreach ($projeto->atividades as $atividade)
+                            @foreach ($projeto['atividades'] as $atividade)
                                 <tr>
                                     <th></th>
-                                    <td>{{ $atividade->cd_atividade }}</td>
-                                    <td>{{ $atividade->nm_atividade }}</td>
-                                    <td>{{ $atividade->data_ini_formatada }}</td>
-                                    <td>{{ $atividade->data_fim_formatada }}</td>
-                                    <td>{{ $atividade->is_finalizada == true ? 'Sim' : 'Não'}}</td>
-                                    <td class="px-0"><a @click.prevent="openModalExcluirAtividade({{ json_encode($atividade->cd_atividade) }})"><i class="bi bi-trash cursor-pointer"></i></td>
+                                    <td>{{ $atividade['cd_atividade'] }}</td>
+                                    <td>{{ $atividade['nm_atividade'] }}</td>
+                                    <td>{{ $atividade['data_ini_formatada'] }}</td>
+                                    <td>{{ $atividade['data_fim_formatada'] }}</td>
+                                    <td>{{ $atividade['is_finalizada'] == true ? 'Sim' : 'Não'}}</td>
+                                    <td class="px-0"><a @click.prevent="openModalExcluirAtividade({{ json_encode($atividade['cd_atividade']) }})" class="link-danger"><i class="bi bi-trash cursor-pointer"></i></td>
                                 </tr>
                             @endforeach
                         @endif
+                    </tbody>
                 </table>
             @endforeach
 

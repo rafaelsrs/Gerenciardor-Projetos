@@ -12,29 +12,28 @@ class ProjectService extends AbstractService
         parent::__construct($model);
     }
 
-    public function gerarListagem($projetos, $atividades)
+    public function gerarListagem(array $projetos, array $atividades)
     {
         $atividadesAgrupadas = [];
         foreach ($atividades as $atividade) {
-            $atividadesAgrupadas[$atividade->cd_projeto][] = $atividade;
-
-            $atividade->data_ini_formatada = Carbon::parse($atividade->data_ini)->format('d/m/Y');
-            $atividade->data_fim_formatada = Carbon::parse($atividade->data_fim)->format('d/m/Y');
+            $atividade['data_ini_formatada'] = $atividade['data_ini'] ? Carbon::parse($atividade['data_ini'])->format('d/m/Y') : '-';
+            $atividade['data_fim_formatada'] = $atividade['data_fim'] ? Carbon::parse($atividade['data_fim'])->format('d/m/Y') : '-';
+            $atividadesAgrupadas[$atividade['cd_projeto']][] = $atividade;
         }
 
         // Combinar os projetos com suas respectivas atividades
         foreach ($projetos as &$projeto) {
-            $projeto->atividades = $atividadesAgrupadas[$projeto->cd_projeto] ?? [];
+            $projeto['atividades'] = $atividadesAgrupadas[$projeto['cd_projeto']] ?? [];
 
-            $projeto->data_ini_formatada = Carbon::parse($projeto->data_ini)->format('d/m/Y');
-            $projeto->data_fim_formatada = Carbon::parse($projeto->data_fim)->format('d/m/Y');
+            $projeto['data_ini_formatada'] = $projeto['data_ini'] ? Carbon::parse($projeto['data_ini'])->format('d/m/Y') : '-';
+            $projeto['data_fim_formatada'] = $projeto['data_fim'] ? Carbon::parse($projeto['data_fim'])->format('d/m/Y') : '-';
 
-            $projeto->percentual_andamento = $this->calcularPercentualAndamento($projeto->atividades);
+            $projeto['percentual_andamento'] = $this->calcularPercentualAndamento($projeto['atividades']);
 
-            if(!empty($projeto->atividades)) {
-                $projeto->atrasado = end($projeto->atividades)->data_fim > $projeto->data_fim;
-            }else {
-                $projeto->atrasado = false;
+            if (!empty($projeto['atividades'])) {
+                $projeto['atrasado'] = end($projeto['atividades'])['data_fim'] > $projeto['data_fim'];
+            } else {
+                $projeto['atrasado'] = false;
             }
         }
 
@@ -50,7 +49,7 @@ class ProjectService extends AbstractService
         }
 
         $atividadesFinalizadas = array_filter($atividades, function($atividade) {
-            return $atividade->is_finalizada == true;
+            return $atividade['is_finalizada'] == true;
         });
 
         $totalFinalizadas = count($atividadesFinalizadas);

@@ -13,28 +13,28 @@ abstract class AbstractRepository implements RepositoryInterface
 
     public function create($data)
     {
-        $this->model->setData($data);
-        return $this->model->incluir();
+        return $this->model->create($data);
     }
 
     public function update($data, $id)
     {
-        $this->model->setData($data);
-        return $this->model->editar($data);
+        $registro = $this->model->findOrFail($id);
+        return $registro->update($data);
     }
 
     public function delete($id)
     {
-        return $this->model->excluir($id);
+        $registro = $this->model->findOrFail($id);
+        return $registro->delete($registro);
     }
 
     public function all()
     {
-        return $this->model->listar();
+        return $this->model->all()->toArray();
     }
 
     public function find($id)
     {
-        return $this->model->find($id);
+        return $this->model->findOrFail($id);
     }
 }

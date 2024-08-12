@@ -13,12 +13,20 @@ return new class extends Migration
     {
         Schema::create('atividade', function (Blueprint $table) {
             $table->id('cd_atividade');
-            $table->integer('cd_projeto');
+            $table->unsignedBigInteger('cd_projeto');
             $table->string('nm_atividade')->nullable();
             $table->date('data_ini')->nullable();
             $table->date('data_fim')->nullable();
             $table->boolean('is_finalizada')->default(false);
+            $table->timestamps();
+
+            $table->foreign('cd_projeto')
+                ->references('cd_projeto')
+                ->on('projeto')
+                ->onDelete('cascade');
         });
+
+
     }
 
     /**

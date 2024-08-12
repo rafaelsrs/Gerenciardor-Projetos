@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('nm_projeto')->nullable();
             $table->date('data_ini')->nullable();
             $table->date('data_fim')->nullable();
+            $table->timestamps();
         });
     }
 

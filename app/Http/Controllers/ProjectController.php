@@ -29,39 +29,30 @@ class ProjectController extends Controller
 
         $listagem = $this->projectService->gerarListagem($projetosService, $atividadesService);
 
-        return view('projeto/index', ['projetos' => $listagem]);
+        return view('projeto/index', ['listagem' => $listagem]);
     }
 
 
     public function create(Request $request)
     {
-        try {
-            $cd_projeto = $this->projectService->create($request->input("projeto", []));
-            $this->acitivityService->tratarInclusaoAtividade($request->input("atividades", []), $cd_projeto);
+        $projeto = $this->projectService->create($request->input("projeto", []));
+        $this->acitivityService->tratarInclusaoAtividade($request->input("atividades", []), $projeto->cd_projeto);
 
-            $response['status']  = true;
-
-        } catch (\Exception $e) {
-            $response['status']  = false;
-            $response['message'] = "Deu bigode2!";
-            $response['error']   = $e->getMessage();
-        }
-
-        return response()->json($response);
+        return response()->json(['message' => 'Projeto atualizado com sucesso!'], 200);
     }
 
     public function update(Request $request, $id)
     {
-        $this->projectService->update($id, $request->input("projeto", []));
+        $this->projectService->update($id, $request->except(["atividades"]));
         $this->acitivityService->tratarEdicaoAtividades($request->input("atividades", []), $id);
 
-        return response()->json(['message' => 'Deu boa!!!']);
+        return response()->json(['message' => 'Projeto atualizado com sucesso!'], 200);
     }
 
     public function delete(Request $request, $id)
     {
         $this->projectService->delete($id);
 
-        return response()->json(['message' => 'Deu boa!!!']);
+        return response()->json(['message' => 'Projeto deletado com sucesso!'], 200);
     }
 }

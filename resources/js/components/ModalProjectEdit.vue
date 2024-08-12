@@ -2,7 +2,7 @@
     <div v-if="show" class="modal fade show" tabindex="-1" role="dialog" style="display: block;">
         <div class="modal-dialog modal-fullscreen" role="document">
             <div class="modal-content">
-                <div class="modal-header" style="background-color: gray;">
+                <div class="modal-header" style="background-color: lightgray;">
                     <h5 class="modal-title">Editar Projeto</h5>
                   <button type="button" class="btn-close" @click="$emit('close')" aria-label="Close"></button>
                 </div>
@@ -28,36 +28,33 @@
                         </div>
                         <div class="col-12">
 
-                            <div class="form-group mb-2">
+                            <div class="d-flex align-items-center mb-2">
                                 <h2>Atividades</h2>
-                                <button class="btn btn-primary" @click="adicionarAtividade()">Adicionar Atividade</button>
+                                <button class="btn btn-primary mx-4" @click="adicionarAtividade()">Adicionar Atividade</button>
                             </div>
 
                             <div v-for="(atividade, idxAtividade) in getAtividades">
 
-                                <div v-if="!atividade.deleted" class="d-flex mb-2">
-                                    <div class="form-group mx-2">
+                                <div v-if="!atividade.deleted" class="row mb-2">
+                                    <div class="form-group col-md-5">
                                         <label for="name">Nome</label>
                                         <input type="text" class="form-control" v-model="atividade.nm_atividade">
                                     </div>
 
-                                    <div class="form-group mx-2">
+                                    <div class="form-group col-md-2">
                                         <label for="name">Data Início</label>
                                         <input type="date" class="form-control" max="9999-12-31" v-model="atividade.data_ini">
                                     </div>
 
-                                    <div class="form-group mx-2">
+                                    <div class="form-group col-md-2">
                                         <label for="name">Data Fim</label>
                                         <input type="date" class="form-control" max="9999-12-31" v-model="atividade.data_fim">
                                     </div>
 
-                                    <div class="form-check mx-2 mt-4 py-2">
+                                    <div class="form-check col-md-2 mt-4 py-2">
                                         <input class="form-check-input" type="checkbox" v-model="atividade.is_finalizada" id="flexCheckDefault">
                                         <label class="form-check-label" for="flexCheckDefault"> Finalizada </label>
-                                    </div>
-
-                                    <div class="mt-4 py-2">
-                                        <a @click="removerAtividade(idxAtividade)">
+                                          <a @click="removerAtividade(idxAtividade)" class="link-danger mx-3">
                                             <i class="bi bi-trash cursor-pointer"></i>
                                         </a>
                                     </div>
@@ -68,26 +65,12 @@
                     </div>
                 </div>
                 <div class="modal-footer" style="background-color: black;">
-                    <button type="button" class="btn btn-secondary" @click="$emit('close')">Close</button>
-                    <button type="button" class="btn btn-primary" @click="salvarprojeto()">Save changes</button>
+                    <button type="button" class="btn btn-secondary" @click="$emit('close')">Fechar</button>
+                    <button type="button" class="btn btn-primary" @click="salvarprojeto()">Salvar</button>
                 </div>
             </div>
         </div>
     </div>
-    <!-- <div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;">
-        <div class="toast" style="position: absolute; top: 0; right: 0;">
-            <div class="toast-header">
-                <strong class="mr-auto">Bootstrap</strong>
-                <small>11 mins ago</small>
-                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="toast-body">
-                Hello, world! This is a toast message.
-            </div>
-        </div>
-    </div>-->
 </template>
 
 <script>
